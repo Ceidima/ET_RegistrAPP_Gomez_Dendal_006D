@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Código QR</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="generarCodigoQR()" expand="block" fill="clear" shape="round">
+    Generar QR de {{ usuario.materia1 }}
+  </ion-button>
+  <div *ngIf="mostrarCodigoQR">
+    <ion-card class="ion-text-center">
+      <ion-card-content>
+        <qrcode
+          [qrdata]="qrCodeString"
+          [width]="210"
+          [errorCorrectionLevel]="'M'">
+        </qrcode>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-button (click)="generarCodigoQR2()" expand="block" fill="clear" shape="round">
+    Generar QR de {{ usuario.materia2 }}
+  </ion-button>
+  <div *ngIf="mostrarCodigoQR2">
+    <ion-card class="ion-text-center">
+      <ion-card-content>
+        <qrcode
+          [qrdata]="qrCodeString2"
+          [width]="210"
+          [errorCorrectionLevel]="'M'">
+        </qrcode>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

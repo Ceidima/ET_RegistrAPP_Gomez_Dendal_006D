@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()" color="danger">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+        
+      </ion-button>
+    </ion-buttons>
+    <ion-title color="primary">RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let a of estudiantes; let i=index" [routerLink]="['/estudiantes', a.id]">
+      <ion-label>{{a['username']}} &nbsp; {{a['rut']}} &nbsp; {{a['correo']}} &nbsp;</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

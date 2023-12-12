@@ -1,0 +1,117 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="MostrarMenu()" color="danger">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title color="primary">RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card style="background-color: #1E3888;">
+    <ion-card-header>
+      <ion-card-title>Registrate como nuevo usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      
+      <form [formGroup]="registroForm">
+        <ion-item>
+          <ion-label position="floating">Username: </ion-label>
+          <ion-input type="text" formControlName="username" placeholder="Nombre de usuario..." ></ion-input>
+        </ion-item>
+
+        <div *ngIf="registroForm.get('username')?.invalid && (registroForm.get('username')?.dirty ||registroForm.get('username')?.touched)">
+          <div style="color:red" *ngIf="registroForm.get('username')?.hasError('required')">
+            *Username es obligatorio.
+          </div>
+          <div style="color:red" *ngIf="registroForm.get('username')?.hasError('minlength')">
+            *Username Mínimo de 4 caracteres.
+          </div>
+        </div>
+          <ion-item>
+            <ion-label position="floating">Rol: </ion-label>
+            <ion-select formControlName="rol" (ionChange)="onRolChange()">
+              <ion-select-option value="Estudiante">Estudiante</ion-select-option>
+              <ion-select-option value="Profesor">Profesor</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="registroForm.get('rol')?.value === 'Profesor'">
+            <ion-label position="floating">Materia 1: </ion-label>
+            <ion-select formControlName="materia1"  >
+              <ion-select-option value="Programacion">Programacion movil</ion-select-option>
+              <ion-select-option value="Arquitectura">Arquitectura</ion-select-option>
+              <ion-select-option value="Calidad">Calidad de software</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="registroForm.get('rol')?.value === 'Profesor'">
+            <ion-label position="floating">Materia 2: </ion-label>
+            <ion-select formControlName="materia2"  >
+              <ion-select-option value="Programacion">Programacion movil</ion-select-option>
+              <ion-select-option value="Arquitectura">Arquitectura</ion-select-option>
+              <ion-select-option value="Calidad">Calidad de software</ion-select-option>
+            </ion-select>
+          </ion-item>
+          
+          <ion-item >
+            <ion-label position="floating">Password: </ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>  
+
+          <div *ngIf="registroForm.get('password')?.invalid && (registroForm.get('password')?.dirty ||registroForm.get('password')?.touched)">
+            <div style="color:red" *ngIf="registroForm.get('password')?.hasError('required')">
+              *Contraseña Obligatoria.
+            </div>
+            <div style="color:red" *ngIf="registroForm.get('password')?.hasError('minlength')">
+              *La contraseña debe tener mínimo 8 carácteres.
+            </div>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">Rut</ion-label>
+            <ion-input type="text" placeholder="Inserte rut.." formControlName="rut"></ion-input>
+          </ion-item>
+
+          <div *ngIf="registroForm.get('rut')?.invalid && (registroForm.get('rut')?.dirty ||registroForm.get('rut')?.touched)">
+            <div style="color:red" *ngIf="registroForm.get('rut')?.hasError('required')">
+              *Rut Obligatorio.
+            </div>
+            <div style="color:red" *ngIf="registroForm.get('rut')?.hasError('minlength')">
+              *Rut debe tener mínimo 9 carácteres.
+            </div>
+          </div>
+
+          <ion-item>
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input type="email" placeholder="ejemplo@gmail.com" formControlName="correo"></ion-input>
+          </ion-item>
+
+          <div *ngIf="registroForm.get('correo')?.invalid && (registroForm.get('correo')?.dirty ||registroForm.get('correo')?.touched)">
+            <div style="color:red" *ngIf="registroForm.get('correo')?.hasError('required')">
+              *Correo Obligatorio.
+            </div>
+            <div style="color:red" *ngIf="registroForm.get('correo')?.hasError('minlength')">
+              *Correo debe tener mínimo 10 carácteres.
+            </div>
+          </div>
+
+        </form >
+      
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-button (click)="registrarUsuario()" [disabled]="!registroForm.valid" expand="block" shape="round">
+          Crear Usuario
+        </ion-button>
+        
+      </ion-col>
+      <ion-col size="1">
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>

@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="primary"> RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div style="text-align: center;">
+    <img src="assets/icon/qrcin.png" style="max-width: 90vw; max-height: 90vh; margin: auto;" class="ion-padding">
+  </div>
+  <div style="text-align: center;">
+    <p style="font-size: 40px;" > ¡¡Bienvenido!!</p>
+  </div>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-button routerLink="/registro" expand="block" fill="solid" color="primary" shape="round">
+        Registrarse
+        </ion-button>
+        <ion-button routerLink="/login" expand="block" fill="solid" color="primary" shape="round">
+          Login
+        </ion-button>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

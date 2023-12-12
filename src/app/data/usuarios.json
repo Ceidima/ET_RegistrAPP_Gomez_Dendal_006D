@@ -1,0 +1,147 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "username": "Nicolas Dendal",
+      "correo": "ni.dendal@duocuc.cl",
+      "rut": "21187346-0",
+      "password": "21187346-0",
+      "rol": "Estudiante",
+      "isactive": true
+    },
+    {
+      "id": 2,
+      "username": "Yerko Gomez",
+      "rol": "Profesor",
+      "rut": "190000001",
+      "password": "12345678",
+      "correo": "ye.gomez@duocuc.cl",
+      "isactive": true
+    },
+    {
+      "id": 3,
+      "username": "momo",
+      "rol": "Estudiante",
+      "password": "123456789",
+      "correo": "elmomo8@gmail.com",
+      "materia1": "",
+      "materia2": "",
+      "isactive": true
+    },
+    {
+      "id": 4,
+      "username": "omnom",
+      "rol": "Profesor",
+      "password": "12345678",
+      "correo": "sisis9@gmail.com",
+      "materia1": "Programacion",
+      "materia2": "Arquitectura",
+      "isactive": true
+    },
+    {
+      "id": 5,
+      "username": "topo",
+      "rol": "Estudiante",
+      "password": "12345678",
+      "correo": "11113@gmail.com",
+      "materia1": "",
+      "materia2": "",
+      "isactive": true
+    }
+  ],
+  "profesores": [
+    {
+      "id": 1,
+      "username": "Nicolas Dendal",
+      "rut": "21187346-0",
+      "correo": "ni.dendal@duocuc.cl",
+      "password": "21187346-0",
+      "rol": "Estudiante",
+      "isactive": true
+    },
+    {
+      "id": 2,
+      "username": "Yerko Gomez",
+      "correo": "ye.gomez@duocuc.cl",
+      "rut": "190000000",
+      "password": "12345678",
+      "rol": "Profesor",
+      "isactive": true
+    },
+    {
+      "username": "omnom",
+      "password": "12345678",
+      "rut": "123412341",
+      "correo": "ussusu@gmail.com",
+      "materia1": "Programacion",
+      "materia2": "Arquitectura",
+      "rol": "profesor",
+      "isactive": true,
+      "id": 3
+    }
+  ],
+  "estudiantes": [
+    {
+      "id": 1,
+      "username": "Nicolas Dendal",
+      "rut": "21187346-0",
+      "correo": "ni.dendal@duocuc.cl",
+      "password": "21187346-0",
+      "rol": "Estudiante",
+      "isactive": true
+    },
+    {
+      "id": 2,
+      "username": "Yerko Gomez",
+      "rol": "estudiante",
+      "rut": "190000000",
+      "password": "12345678",
+      "correo": "ye.gomez@duocuc.cl",
+      "isactive": true
+    },
+    {
+      "id": 3,
+      "username": "momo",
+      "rol": "Estudiante",
+      "password": "12345678",
+      "correo": "elmomo6@gmail.com",
+      "materia1": "",
+      "materia2": "",
+      "isactive": true
+    },
+    {
+      "username": "topo",
+      "password": "12345678",
+      "rut": "123456789",
+      "correo": "1111@gmail.com",
+      "materia1": "",
+      "materia2": "",
+      "rol": "Estudiante",
+      "isactive": true,
+      "id": 4
+    }
+  ],
+  "QRcodes": [
+    {
+      "id": 1,
+      "username": "omnom",
+      "correo": "sisis9@gmail.com",
+      "materia": "Programacion",
+      "fecha:": "2023-12-11"
+    },
+    {
+      "username": "omnom",
+      "correo": "sisis9@gmail.com",
+      "materia": "Arquitectura",
+      "fecha": "2023-12-11",
+      "id": 2
+    },
+    {
+      "username": "omnom",
+      "correo": "sisis9@gmail.com",
+      "materia": "Programacion",
+      "fecha": "2023-12-11",
+      "id": 3
+    }
+  ]
+}

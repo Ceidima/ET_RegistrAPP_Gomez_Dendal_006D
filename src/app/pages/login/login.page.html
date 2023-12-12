@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="primary">RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-card style="background-color: #1E3888;">
+
+    <form [formGroup]="loginForm">
+      <ion-item>
+        <ion-label position="floating">Nombre: </ion-label>
+        <ion-input type="text" formControlName="username" placeholder="Ingrese Nombre..."></ion-input>
+      </ion-item>
+  
+      <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+        <div style="color: red" *ngIf="loginForm.get('username')?.hasError('required')">
+          *Username es requerido
+        </div>
+        <div style="color: red" *ngIf="loginForm.get('username')?.hasError('minlength')">
+          *Username mínimo de 4 carácteres
+        </div>
+  
+      </div>
+  
+      <ion-item>
+        <ion-label position="floating">Contraseña: </ion-label>
+        <ion-input type="Password" formControlName="password" placeholder="Ingrese Contraseña..."></ion-input>
+      </ion-item>
+  
+      <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+        <div style="color: red" *ngIf="loginForm.get('password')?.hasError('required')">
+          *Se requiere contraseña
+        </div>
+        <div style="color: red" *ngIf="loginForm.get('password')?.hasError('minlength')">
+          *Contraseña mínima de 4 carácteres
+        </div>
+        
+      </div>
+    </form>
+  </ion-card>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-button (click)="login()" expand="block" fill="solid" color="warning" shape="round">
+          Ingresar.
+        </ion-button>
+        <ion-button routerLink="/registro" expand="block" fill="solid" color="warning" shape="round">
+          Registrarse
+          </ion-button>
+      </ion-col>
+      <ion-col size="1">
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+</ion-content>

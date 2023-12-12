@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline" color="success"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let noticia of noticias">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>{{noticia.source.name}}</ion-card-subtitle>
+            <ion-card-title>{{noticia.title}}</ion-card-title>
+          </ion-card-header>
+          <ion-img *ngIf="noticia.urlToImage" [src]="noticia.urlToImage"></ion-img>
+          <ion-card-content>
+            <p>{{noticia.description}}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

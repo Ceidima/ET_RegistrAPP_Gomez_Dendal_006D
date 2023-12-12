@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Detalle Estudiante</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/listar"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>ID: </ion-label>
+    <ion-label>{{ estudiante?.id }}</ion-label>
+  </ion-item>
+
+  <ion-card>
+    <ion-item>
+      <ion-label>Usuario: </ion-label>
+      <ion-label>{{ estudiante.username }}</ion-label>
+    </ion-item> 
+
+
+    <ion-item>
+      <ion-label>Correo: </ion-label>
+      <ion-label>{{ estudiante.correo}}</ion-label>
+    </ion-item>
+    <ion-button [routerLink]="['/actualizar', estudiante.id]" color="succes">
+      <ion-icon name="create"></ion-icon></ion-button>
+    <ion-button [routerLink]="['/eliminar', estudiante.id]"   color="primary">
+      <ion-icon name="trash"></ion-icon></ion-button>
+  </ion-card> 
+</ion-content>
